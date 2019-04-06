@@ -9,3 +9,5 @@ import './js/map'
 
 
 
+
+  M.AutoInit();
