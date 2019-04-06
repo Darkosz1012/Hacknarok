@@ -57,7 +57,7 @@ apiRoutes.use(function (req, res, next) {
     var token = req.body.token || req.query.token || req.headers['x-access-token'];
 
     if (token) {
-        jwt.verify(token, app.get('superSecret'), function (err, decoded) {
+        jwt.verify(token, 'superSecret', function (err, decoded) {
             if (err) {
                 return res.json({
                     success: false,
@@ -88,7 +88,7 @@ app.post('/authenticate/json', function (req, res) {
                 const payload = {
                     username: user.username
                 };
-                var token = jwt.sign(payload, app.get('superSecret'), {
+                var token = jwt.sign(payload, 'superSecret', {
                     expiresInMinutes: 60 
                 });
                 res.json({
