@@ -1,7 +1,7 @@
-<<<<<<< HEAD
 #map {
   height: 280px;
-=======
+}
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -94,7 +94,6 @@ body {
 
 .loginPanel__image img {
   height: 100%;
->>>>>>> Jakub
 }
 
 @media screen and (max-width: 600px) {
