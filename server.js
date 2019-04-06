@@ -1,9 +1,16 @@
 const express = require('express');
+// var expressVue = require("express-vue");
+// const expressVueMiddleware = expressVue.init();
+const jwt = require('jsonwebtoken');
 var app = express()
 var path = require("path")
 var bodyParser = require("body-parser")
 const PORT = 3000;
 console.log("dziala")
+
+var cors = require('cors')
+
+app.use(cors()) // Use this after the variable declaration
 
 var database = require("./controllers/database")({
     user: 'postgres',
@@ -13,17 +20,17 @@ var database = require("./controllers/database")({
     port: 5432
 })
 
-database.checkconection().then(function(res){
-    console.log("Database work!!!")
-}).catch(function(err){
-    console.log(err)
-});
+// database.checkconection().then(function(res){
+//     console.log("Database work!!!")
+// }).catch(function(err){
+//     console.log(err)
+// });
 
-database.findUsersGroupsByUser(2).then(function(res){
-    console.log(res)
-}).catch(function(err){
-    console.log(err)
-});
+// database.findUsersGroupsByUser(2).then(function(res){
+//     console.log(res)
+// }).catch(function(err){
+//     console.log(err)
+// });
 
 
 var apiRoutes = express.Router();
@@ -38,10 +45,11 @@ function errorHandler(err,res){
     res.status(500).send(err)
 }
 
-app.get("/", function (req, res) {
-    console.log("login")
-    res.sendFile(path.join(__dirname + '/static/pages/login.html'));
-})
+// app.get("/", function (req, res) {
+//     console.log("login")
+//     res.sendFile(path.join(__dirname + '/static/pages/login.html'));
+//     res.renderVue(path.join(__dirname + '/vue/src/App.vue'));
+// })
 
 var apiRoutes = express.Router();
 
@@ -69,16 +77,14 @@ apiRoutes.use(function (req, res, next) {
     }
 });
 
-apiRoutes.post('/authenticate/json', function (req, res) {
-    database.findUser({username:req.body.name}).then(function(value){
+app.post('/authenticate/json', function (req, res) {
+    console.log('/authenticate/json')
+    console.log(req.body)
+    database.findUser(req.body.username).then(function(value){
         var user = value.rows[0]
-        if (!user) {
-            res.json({
-                success: false,
-                message: 'Authentication failed. User not found.'
-            });
-        } else if (user) {
-            database.findUserAndCheckPassword().then(function(res){
+       
+            database.findUserAndCheckPassword(req.body).then(function(resl){
+                console.log("then ",resl)
                 const payload = {
                     username: user.username
                 };
@@ -91,14 +97,19 @@ apiRoutes.post('/authenticate/json', function (req, res) {
                     token: token
                 });
             }).catch(function(err){
+                console.log(err)
                 res.json({
                     success: false,
                     message: 'Authentication failed. Wrong password.'
                 });
             })
-        }
+        
     }).catch(function(err){
-        errorHandler(err,res)
+        res.json({
+            success: false,
+            message: 'Authentication failed. User not found.'
+        });
+       // errorHandler(err,res)
     })
 });
 
