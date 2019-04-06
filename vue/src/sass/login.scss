@@ -1,0 +1,60 @@
+@import "utils/variables";
+@import "base/base";
+@import "base/typography";
+
+/* ======== */
+
+.loginPanel{
+    width: 90vh;
+    left: inherit;
+    position: relative;
+    height: 70vh;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    @media screen and (max-width: 600px) {
+        width: 100vw;
+        height: 100vh;
+    }
+    .row{
+        margin-bottom: 0.5rem;
+    }
+    &__header{
+        h1{
+            margin-left: 2rem;
+            margin-right: 2rem;
+            font-size: 2rem;
+            @media screen and (max-width: 600px) {
+                font-size: 2.5rem;
+            }
+        }
+        span{
+            font-weight: bold;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+            //color: $color-text-distinction;
+        }
+        p{
+            margin-left: 2rem;
+            margin-right: 2rem;
+            font-size: 1rem;
+            //color: $color-text-dark;
+        }
+    }
+    &__image{
+        height: 100%;
+        display: block;
+        width: calc(100%/3);
+        //background: $color-distinction;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        img{
+            height: 100%;
+        }
+        @media screen and (max-width: 600px) {
+            display: none;
+        }
+    }
+}
