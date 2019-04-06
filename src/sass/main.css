@@ -1,0 +1,104 @@
+#map {
+  height: 280px;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+}
+
+/*html{
+    font-size: 62.5%;
+}*/
+#nav, body {
+  width: 100%;
+  background: #F2F2F2;
+  overflow-x: hidden;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main {
+  background: #FAFAFA;
+  position: relative;
+  left: 0;
+}
+
+body {
+  color: #0094AD;
+}
+
+/* ======== */
+.loginPanel {
+  width: 90vh;
+  left: inherit;
+  position: relative;
+  height: 70vh;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 600px) {
+  .loginPanel {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.loginPanel .row {
+  margin-bottom: 0.5rem;
+}
+
+.loginPanel__header h1 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .loginPanel__header h1 {
+    font-size: 2.5rem;
+  }
+}
+
+.loginPanel__header span {
+  font-weight: bold;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.loginPanel__header p {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-size: 1rem;
+}
+
+.loginPanel__image {
+  height: 100%;
+  display: block;
+  width: calc(100%/3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.loginPanel__image img {
+  height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .loginPanel__image {
+    display: none;
+  }
+}
+/*# sourceMappingURL=main.css.map */
