@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-#map {
-  height: 280px;
-=======
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -43,9 +39,11 @@ body {
   position: relative;
   height: 80vh;
   padding: 2rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 
-@media screen and (max-width: 100vh) {
+@media screen and (max-width: 600px) {
   .loginPanel {
     padding: 10rem;
     width: 100vw;
@@ -54,24 +52,27 @@ body {
 }
 
 .loginPanel__header h1 {
+  margin-left: 2rem;
+  margin-right: 2rem;
   font-size: 2rem;
 }
 
 .loginPanel__header span {
   font-weight: bold;
-  color: #2d2e2e;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .loginPanel__header p {
+  margin-left: 2rem;
+  margin-right: 2rem;
   font-size: 1rem;
-  color: #2d2e2e;
 }
 
 .loginPanel__image {
   height: 100%;
   display: block;
   width: calc(100%/3);
-  background: #FA7305;
   position: absolute;
   top: 0;
   left: 0;
@@ -80,6 +81,5 @@ body {
 
 .loginPanel__image img {
   height: 100%;
->>>>>>> Jakub
 }
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=login.css.map */

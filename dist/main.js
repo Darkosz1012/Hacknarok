@@ -113,9 +113,9 @@ eval("exports = module.exports = __webpack_require__(/*! ../../css-loader/dist/r
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/sass/main.scss ***!
   \***********************************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"#map {\\n  height: 280px; }\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/sass/main.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js");
+eval("throw new Error(\"Module build failed (from ./node_modules/sass-loader/lib/loader.js):\\n\\r\\n@import \\\"components/comp\\\";\\r\\r\\n^\\r\\n      Media query expression must begin with '('\\r\\n      in C:\\\\Users\\\\ssymon\\\\Documents\\\\GitHub\\\\Hacknarok\\\\src\\\\sass\\\\main.scss (line 3, column 1)\");\n\n//# sourceURL=webpack:///./src/sass/main.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js");
 
 /***/ }),
 
