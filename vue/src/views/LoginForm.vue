@@ -3,11 +3,9 @@
         <div class="row">
             <div class="col m8 offset-m4 s10 offset-s1 loginPanel__header" v-if="isLogin">
                 <h1 class="deep-orange-text" >
-                    Logowanie do <span class="deep-orange-text text-darken-2">VORTEX</span>
+                    Log in <span class="deep-orange-text text-darken-2">VORTEX</span>
                 </h1>
-                <p class="grey-text text-darken-2"> Lorem ipsum dolor sit amet, 
-                    consectetur adipiscing elit. Suspendisse massa metus, 
-                    interdum et ante id, tristique tempor massa. </p>
+
             </div>
             <div class="col m8 offset-m4 s10 offset-s1 loginPanel__header" v-else>
                 <h1 class="deep-orange-text" >
@@ -37,18 +35,18 @@
                 </div>
                 <div class="row" v-if="isLogin">
                         <div class="col m3 offset-m2 s6 offset-s1">
-                            <a class="waves-effect btn-flat" @click="submit"> Register</a>
+                            <a class="waves-effect btn-flat" @click="toogleLogin" >Register</a>
                         </div>
                         <div class="col m3 offset-m2 s6 offset-s1">
-                                <a class="waves-effect waves-light btn-small deep-orange darken-2" @click="submit" >Zaloguj</a>
+                                <a class="waves-effect waves-light btn-small deep-orange darken-2" @click="submitLogin" >Zaloguj</a>
                         </div>
                 </div>
                 <div class="row" v-else>
                         <div class="col m3 offset-m2 s6 offset-s1">
-                            <a class="waves-effect btn-flat" @click="submit"> Register</a>
+                            <a class="waves-effect btn-flat" @click="toogleLogin" >Back</a>
                         </div>
                         <div class="col m3 offset-m2 s6 offset-s1">
-                            <a class="waves-effect waves-light btn-small deep-orange darken-2">Register</a>
+                            <a class="waves-effect waves-light btn-small deep-orange darken-2" @click="submitRegister" >Register</a>
                         </div>
                 </div>
             </form>
@@ -57,11 +55,12 @@
 </template>
 
 <script>
+
     export default {
-        name: 'LoginForm',
-        props: ['isLogin'],
+        name: 'LoginForm',        
         data() {
             return {
+                isLogin:true,
                 user: {
                 name: '',
                 pass: ''
@@ -69,20 +68,26 @@
             }
         },
         methods: {
-            submit() {
-            //console.log(this.user)
-                var xhr = new XMLHttpRequest();
-                var url = "http://localhost:3000/authenticate/json";
-                xhr.open("POST", url, true);
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState === 4 && xhr.status === 200) {
-                        var json = JSON.parse(xhr.responseText);
-                   // console.log(json);
-                    }
-                };
-                var data = JSON.stringify({"username": this.user.name, "password": this.user.pass});
-                xhr.send(data);
+            submitLogin() {               
+              var that = this;
+            console.log(this.user)
+               this.httpReq("/authenticate/json",{"username": this.user.name, "password": this.user.pass},function(data){
+                    console.log(data)
+                    that.ls("id",data.data.id);
+                    that.ls("username",data.data.username);
+                    that.ls("token",data.token);
+
+                });
+            },
+            submitRegister() {
+            console.log(this.user)
+               this.httpReq("/authenticate/registration",{"username": this.user.name, "password": this.user.pass},function(data){
+                    console.log(data);
+                });
+            },
+            toogleLogin()
+            {
+                this.isLogin=!this.isLogin
             }
         }
     }
