@@ -4,7 +4,7 @@ import "./sass/main.scss";
 //JS
 import 'materialize-css/dist/js/materialize.js'
 
-function component() {
+/*function component() {
     let element = document.createElement('div');
 
 
@@ -13,4 +13,4 @@ function component() {
     return element;
   }
 
-  document.body.appendChild(component());
+  document.body.appendChild(component());*/
