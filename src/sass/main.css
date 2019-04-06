@@ -1,0 +1,85 @@
+<<<<<<< HEAD
+#map {
+  height: 280px;
+=======
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+}
+
+/*html{
+    font-size: 62.5%;
+}*/
+body {
+  width: 100%;
+  background: #ffffff;
+  overflow-x: hidden;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main {
+  background: #F5F7FA;
+  position: relative;
+  left: 0;
+}
+
+body {
+  color: #0094AD;
+}
+
+/* ======== */
+.loginPanel {
+  width: 90vh;
+  left: inherit;
+  position: relative;
+  height: 80vh;
+  padding: 2rem;
+}
+
+@media screen and (max-width: 100vh) {
+  .loginPanel {
+    padding: 10rem;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.loginPanel__header h1 {
+  font-size: 2rem;
+}
+
+.loginPanel__header span {
+  font-weight: bold;
+  color: #2d2e2e;
+}
+
+.loginPanel__header p {
+  font-size: 1rem;
+  color: #2d2e2e;
+}
+
+.loginPanel__image {
+  height: 100%;
+  display: block;
+  width: calc(100%/3);
+  background: #FA7305;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.loginPanel__image img {
+  height: 100%;
+>>>>>>> Jakub
+}
+/*# sourceMappingURL=main.css.map */

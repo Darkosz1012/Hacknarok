@@ -1,0 +1,85 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+}
+
+/*html{
+    font-size: 62.5%;
+}*/
+body {
+  width: 100%;
+  background: #ffffff;
+  overflow-x: hidden;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main {
+  background: #F5F7FA;
+  position: relative;
+  left: 0;
+}
+
+body {
+  color: #0094AD;
+}
+
+/* ======== */
+.loginPanel {
+  width: 90vh;
+  left: inherit;
+  position: relative;
+  height: 80vh;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 600px) {
+  .loginPanel {
+    padding: 10rem;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.loginPanel__header h1 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-size: 2rem;
+}
+
+.loginPanel__header span {
+  font-weight: bold;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.loginPanel__header p {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-size: 1rem;
+}
+
+.loginPanel__image {
+  height: 100%;
+  display: block;
+  width: calc(100%/3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.loginPanel__image img {
+  height: 100%;
+}
+/*# sourceMappingURL=login.css.map */
