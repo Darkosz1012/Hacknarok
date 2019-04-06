@@ -48,6 +48,8 @@
 </style>
 
 <script>
+import request from 'request';
+
 export default {
   name: 'Login',
   data() {
