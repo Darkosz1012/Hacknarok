@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack",
+    "dev": "webpack --mode=development"
   },
   "repository": {
     "type": "git",
@@ -18,13 +19,21 @@
   },
   "homepage": "https://github.com/Darkosz1012/Hacknarok#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.2.1",
+    "nodemon": "^1.18.10",
+    "path": "^0.12.7",
+    "pg": "^7.9.0"
     "materialize-css": "^1.0.0"
   },
   "keywords": [],
   "devDependencies": {
     "css-loader": "^2.1.1",
     "file-loader": "^3.0.1",
+    "leaflet": "^1.4.0",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",

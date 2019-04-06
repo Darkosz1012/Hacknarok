@@ -6,8 +6,16 @@
         "login.scss",
         "utils/_variables.scss",
         "base/_base.scss",
+<<<<<<< HEAD
+        "base/_typography.scss"
+<<<<<<< HEAD
+>>>>>>> Jakub
+=======
         "base/_typography.scss",
         "homePage.scss"
+>>>>>>> Jakub
+=======
+>>>>>>> Szymon
     ],
     "names": [],
     "file": "main.css"
