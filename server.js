@@ -78,18 +78,15 @@ apiRoutes.use(function (req, res, next) {
 });
 
 app.post('/authenticate/json', function (req, res) {
-    console.log('/authenticate/json')
-    console.log(req.body)
     database.findUser(req.body.username).then(function(value){
         var user = value.rows[0]
        
             database.findUserAndCheckPassword(req.body).then(function(resl){
-                console.log("then ",resl)
                 const payload = {
                     username: user.username
                 };
                 var token = jwt.sign(payload, 'superSecret', {
-                    expiresInMinutes: 60 
+                    expiresIn: '60m'
                 });
                 res.json({
                     success: true,
@@ -97,7 +94,6 @@ app.post('/authenticate/json', function (req, res) {
                     token: token
                 });
             }).catch(function(err){
-                console.log(err)
                 res.json({
                     success: false,
                     message: 'Authentication failed. Wrong password.'
@@ -113,6 +109,22 @@ app.post('/authenticate/json', function (req, res) {
     })
 });
 
+app.post('/authenticate/registration', function (req, res) {
+    console.log('/authenticate/registration')
+    database.insertUsers(req.body).then(function(value){
+        res.json({
+            success: true,
+            message: 'Registration succeed'
+        });
+        
+    }).catch(function(err){
+        res.json({
+            success: false,
+            message: err
+        });
+       // errorHandler(err,res)
+    })
+});
 
 
 apiRoutes.get("/panel-glowny", function (req, res) {

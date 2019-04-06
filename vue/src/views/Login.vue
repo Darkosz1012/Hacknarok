@@ -12,7 +12,7 @@
 </style>
 
 <script>
-  import LoginForm from './LoginForm'
+  
   export default {
   name: 'Login',
   data() {
