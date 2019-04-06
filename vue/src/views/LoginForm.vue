@@ -29,7 +29,7 @@
                         <label for="password">Password</label>
                     </div>
                 </div>
-                <div class="row" v-if="isLogin">
+                <div class="row" v-if="!isLogin">
                     <div class="input-field col m8 offset-m2 s10 offset-s1">
                         <input id="password" type="password" class="validate">
                         <label for="password">Repeat password</label>
