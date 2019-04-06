@@ -91,7 +91,8 @@ app.post('/authenticate/json', function (req, res) {
                 res.json({
                     success: true,
                     message: 'Authentication succeed',
-                    token: token
+                    token: token,
+                    data: value.rows[0]
                 });
             }).catch(function(err){
                 res.json({
@@ -249,6 +250,22 @@ apiRoutes.post("/location/findAll", function (req, res) {
 apiRoutes.post("/location/find/name", function (req, res) {
     console.log('/location/find/name')
     database.findLocation(req.body).then(function(value){
+        res.json({
+            success: true,
+            data: value
+        });
+        
+    }).catch(function(err){
+        res.json({
+            success: false,
+            message: err
+        });
+    })
+})
+
+apiRoutes.post("/usersgroups/find", function (req, res) {
+    console.log('/usersgroups/find')
+    database.findUsersGroupsByUser(req.body.id).then(function(value){
         res.json({
             success: true,
             data: value
