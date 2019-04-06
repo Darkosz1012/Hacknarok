@@ -4,13 +4,16 @@ import router from './router'
 import {LMap, LTileLayer, LMarker } from 'vue2-leaflet'
 
 import LoginForm from './views/LoginForm'
+import M from 'materialize-css/dist/js/materialize.js'
 
 import { Icon } from 'leaflet'
 //STYLE
 import 'leaflet/dist/leaflet.css'
 // import 'materialize-css/sass/materialize.scss'
 //SCRIPTS
-import 'materialize-css/dist/js/materialize.js'
+
+
+
 
 Vue.config.productionTip = false
 

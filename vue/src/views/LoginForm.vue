@@ -70,7 +70,7 @@
         },
         methods: {
             submit() {
-            console.log(this.user)
+            //console.log(this.user)
                 var xhr = new XMLHttpRequest();
                 var url = "http://localhost:3000/authenticate/json";
                 xhr.open("POST", url, true);
@@ -78,7 +78,7 @@
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState === 4 && xhr.status === 200) {
                         var json = JSON.parse(xhr.responseText);
-                    console.log(json);
+                   // console.log(json);
                     }
                 };
                 var data = JSON.stringify({"username": this.user.name, "password": this.user.pass});

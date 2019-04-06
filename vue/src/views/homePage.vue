@@ -1,10 +1,5 @@
 <template>
-    <html>
-
-    <head>
-    </head>
-
-    <body>
+    
         <main class="aplication">
             <nav> </nav>
             <ul id="slide-out" class="sidenav">
@@ -67,10 +62,6 @@
             </ul>
             <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </main>
-        <script src="../main.js"></script>
-    </body>
-
-    </html>
 </template>
 
 <style lang="scss">
@@ -78,7 +69,6 @@
 </style>
 
 <script>
-  
   export default {
   name: 'homePage',
   data() {
@@ -87,6 +77,11 @@
     }
   },
   methods: {
+          
+  },
+  mounted() {
+          
+   M.AutoInit();
   }
 }
 </script>
