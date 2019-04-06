@@ -1,16 +1,11 @@
 //SCSS
 import 'materialize-css/sass/materialize.scss'
+import 'leaflet/dist/leaflet.css'
 import "./sass/main.scss";
+
 //JS
 import 'materialize-css/dist/js/materialize.js'
-
-function component() {
-    let element = document.createElement('div');
+import './js/map'
 
 
-    element.innerHTML = "Kurła działa :D";
 
-    return element;
-  }
-
-  document.body.appendChild(component());
