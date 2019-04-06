@@ -3,7 +3,11 @@ import App from './App.vue'
 import router from './router'
 import {LMap, LTileLayer, LMarker } from 'vue2-leaflet'
 import { Icon } from 'leaflet'
+//STYLE
 import 'leaflet/dist/leaflet.css'
+// import 'materialize-css/sass/materialize.scss'
+//SCRIPTS
+import 'materialize-css/dist/js/materialize.js'
 
 Vue.config.productionTip = false
 
