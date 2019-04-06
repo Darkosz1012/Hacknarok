@@ -3,7 +3,7 @@
         <div class="loginPanel__image">
             <img src="@/assets/background.jpg" alt="tlo"/>
         </div>
-        <LoginForm :isLogin="true" />
+        <LoginForm />
   </main>
 </template>
 

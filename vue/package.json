@@ -10,6 +10,7 @@
   "dependencies": {
     "core-js": "^2.6.5",
     "leaflet": "^1.4.0",
+    "local-storage": "^1.4.2",
     "materialize-css": "^1.0.0",
     "vue": "^2.6.6",
     "vue-router": "^3.0.1",
