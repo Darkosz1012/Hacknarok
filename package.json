@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "dev": "webpack --mode=development"
+    "dev": "webpack --mode=development",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -23,11 +24,11 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.5.1",
+    "materialize-css": "^1.0.0",
     "md5": "^2.2.1",
     "nodemon": "^1.18.10",
     "path": "^0.12.7",
     "pg": "^7.9.0"
-    "materialize-css": "^1.0.0"
   },
   "keywords": [],
   "devDependencies": {
@@ -39,5 +40,6 @@
     "style-loader": "^0.23.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
-  }
+  },
+  "main": "server.js"
 }
