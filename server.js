@@ -91,7 +91,8 @@ app.post('/authenticate/json', function (req, res) {
                 res.json({
                     success: true,
                     message: 'Authentication succeed',
-                    token: token
+                    token: token,
+                    data: value.rows[0]
                 });
             }).catch(function(err){
                 res.json({
@@ -112,10 +113,27 @@ app.post('/authenticate/json', function (req, res) {
 app.post('/authenticate/registration', function (req, res) {
     console.log('/authenticate/registration')
     database.insertUsers(req.body).then(function(value){
-        res.json({
-            success: true,
-            message: 'Registration succeed'
-        });
+        database.findUser(req.body.username).then(function(value){
+            console.log(value)
+            const payload = {
+                username: value.rows[0].username
+            };
+            var token = jwt.sign(payload, 'superSecret', {
+                expiresIn: '60m'
+            });
+            res.json({
+                success: true,
+                message: 'Registration succeed',
+                data:value.rows[0],
+                token: token
+            });
+        }).catch(function(err){
+            res.json({
+                success: false,
+                message: 'Authentication failed. User not found.'
+            });
+        })
+        
         
     }).catch(function(err){
         res.json({
@@ -249,6 +267,22 @@ apiRoutes.post("/location/findAll", function (req, res) {
 apiRoutes.post("/location/find/name", function (req, res) {
     console.log('/location/find/name')
     database.findLocation(req.body).then(function(value){
+        res.json({
+            success: true,
+            data: value
+        });
+        
+    }).catch(function(err){
+        res.json({
+            success: false,
+            message: err
+        });
+    })
+})
+
+apiRoutes.post("/usersgroups/find", function (req, res) {
+    console.log('/usersgroups/find')
+    database.findUsersGroupsByUser(req.body.id).then(function(value){
         res.json({
             success: true,
             data: value
