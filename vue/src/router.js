@@ -13,11 +13,14 @@ export default new Router({
       path: '/',
       name: 'login',
       component: Login
+<<<<<<< HEAD
     },
     {
       path: '/home',
       name: 'HomePage',
       component: HomePage
+=======
+>>>>>>> Jakub
     },
   ]
 })
