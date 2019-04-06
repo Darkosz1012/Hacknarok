@@ -37,7 +37,7 @@
                 </div>
                 <div class="row" v-if="isLogin">
                         <div class="col m3 offset-m2 s6 offset-s1">
-                            <a class="waves-effect btn-flat">Register</a>
+                            <a class="waves-effect btn-flat" @click="submit"> Register</a>
                         </div>
                         <div class="col m3 offset-m2 s6 offset-s1">
                                 <a class="waves-effect waves-light btn-small deep-orange darken-2" @click="submit" >Zaloguj</a>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="row" v-else>
                         <div class="col m3 offset-m2 s6 offset-s1">
-                            <label>Lorem ipsum dolor sit amet.</label>
+                            <a class="waves-effect btn-flat" @click="submit"> Register</a>
                         </div>
                         <div class="col m3 offset-m2 s6 offset-s1">
                             <a class="waves-effect waves-light btn-small deep-orange darken-2">Register</a>
