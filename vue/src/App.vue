@@ -1,12 +1,8 @@
 <template>
 
 
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Login</router-link>     
-    </div>
-    <router-view/>
-    
+  <div id="app">    
+    <router-view/>    
   </div>
 </template>
 
@@ -15,10 +11,9 @@
     mounted () {
       navigator.geolocation.getCurrentPosition(function (location) {
 
-        var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
-      
+        var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);   
 
-        var marker = L.marker(latlng).addTo(mymap);
+        
       })
       // this.$nextTick(() => {
       //   this.$refs.myMap.mapObject.ANY_LEAFLET_MAP_METHOD();
@@ -30,7 +25,7 @@
 <style lang="scss">
 body{
     width: 100%;
-    background: $color-main;
+    background: white;
     overflow-x: hidden;
     font-size: 1.6rem;
     display: flex;
