@@ -8,12 +8,11 @@
     width: 90vh;
     left: inherit;
     position: relative;
-    height: 80vh;
+    height: 70vh;
     padding: 2rem;
     border-radius: 0.5rem;
     overflow: hidden;
     @media screen and (max-width: 600px) {
-        padding: 10rem;
         width: 100vw;
         height: 100vh;
     }
@@ -22,6 +21,9 @@
             margin-left: 2rem;
             margin-right: 2rem;
             font-size: 2rem;
+            @media screen and (max-width: 600px) {
+                font-size: 2.5rem;
+            }
         }
         span{
             font-weight: bold;
@@ -47,6 +49,9 @@
         overflow: hidden;
         img{
             height: 100%;
+        }
+        @media screen and (max-width: 600px) {
+            display: none;
         }
     }
 }
