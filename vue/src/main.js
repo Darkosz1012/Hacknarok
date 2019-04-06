@@ -46,7 +46,12 @@ Vue.mixin({
         
           xhr.send(data);
       },
-      ls:ls
+      httpReqToken:function httpReqToken(link,data,res)
+      {
+          this.httpReq(link,{token:ls("token"),...data},(response)=>(res(response)));
+      },
+      ls:ls,
+      router:router
     }
   }
 })
