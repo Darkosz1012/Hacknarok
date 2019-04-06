@@ -1,7 +1,7 @@
 const express = require('express');
 var app = express()
 var path = require("path")
-
+var bodyParser = require("body-parser")
 const PORT = 3000;
 console.log("dziala")
 
@@ -19,6 +19,11 @@ database.checkconection().then(function(res){
     console.log(err)
 });
 
+database.findUsersGroupsByUser(2).then(function(res){
+    console.log(res)
+}).catch(function(err){
+    console.log(err)
+});
 
 
 var apiRoutes = express.Router();
