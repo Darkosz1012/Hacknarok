@@ -69,13 +69,13 @@
         },
         methods: {
             submitLogin() {               
-              
+              var that = this;
             console.log(this.user)
                this.httpReq("/authenticate/json",{"username": this.user.name, "password": this.user.pass},function(data){
                     console.log(data)
-                    this.ls("id",data.id);
-                    this.ls("username",data.username);
-                    this.ls("token",data.token);
+                    that.ls("id",data.data.id);
+                    that.ls("username",data.data.username);
+                    that.ls("token",data.token);
 
                 });
             },

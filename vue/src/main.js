@@ -44,7 +44,7 @@ Vue.mixin({
               }
           };
         
-          xhr.send(data);
+          xhr.send(JSON.stringify(data));
       },
       ls:ls
     }
