@@ -19,7 +19,14 @@
   },
   "homepage": "https://github.com/Darkosz1012/Hacknarok#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.2.1",
+    "nodemon": "^1.18.10",
+    "path": "^0.12.7",
+    "pg": "^7.9.0"
     "materialize-css": "^1.0.0"
   },
   "keywords": [],
