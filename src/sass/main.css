@@ -6,7 +6,7 @@
 /*html{
     font-size: 62.5%;
 }*/
-body {
+#nav {
   width: 100%;
   background: #F2F2F2;
   overflow-x: hidden;
@@ -45,16 +45,25 @@ body {
 
 @media screen and (max-width: 600px) {
   .loginPanel {
-    padding: 10rem;
     width: 100vw;
     height: 100vh;
   }
+}
+
+.loginPanel .row {
+  margin-bottom: 0.5rem;
 }
 
 .loginPanel__header h1 {
   margin-left: 2rem;
   margin-right: 2rem;
   font-size: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .loginPanel__header h1 {
+    font-size: 2.5rem;
+  }
 }
 
 .loginPanel__header span {
@@ -81,5 +90,11 @@ body {
 
 .loginPanel__image img {
   height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .loginPanel__image {
+    display: none;
+  }
 }
 /*# sourceMappingURL=main.css.map */

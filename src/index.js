@@ -13,4 +13,5 @@ import 'materialize-css/dist/js/materialize.js'
     return element;
   }
 
-  document.body.appendChild(component());*/
+  document.body.appendChild(component());*/ 
+  M.AutoInit();

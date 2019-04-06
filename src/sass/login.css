@@ -6,7 +6,7 @@
 /*html{
     font-size: 62.5%;
 }*/
-body {
+#nav {
   width: 100%;
   background: #F2F2F2;
   overflow-x: hidden;
@@ -48,6 +48,10 @@ body {
     width: 100vw;
     height: 100vh;
   }
+}
+
+.loginPanel .row {
+  margin-bottom: 0.5rem;
 }
 
 .loginPanel__header h1 {
