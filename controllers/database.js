@@ -44,7 +44,7 @@ module.exports = function(settings){
         findUser:function(username){
             return new Promise(function(resolve,reject){
                 querypg(`SELECT * FROM users WHERE username='${username}'`).then(function(res){
-                    console.log(res);
+                     //console.log(res);
                     if(res.rowCount==0){
                         reject("user was not found")
                     }else{
@@ -60,7 +60,9 @@ module.exports = function(settings){
                     if(res.rowCount==0){
                         reject("user was not found")
                     }else{
+                        console.log(res.rows[0].password,user.password,auth.verify(res.rows[0].password,user.password))
                         if(auth.verify(res.rows[0].password,user.password)){
+                            console.log(res.rows[0].password,user.password,auth.verify(res.rows[0].password,user.password))
                             resolve("Znalazlo");
                         }else{
                             reject("incorrect password")
@@ -78,7 +80,7 @@ module.exports = function(settings){
         findGroup:function(name){
             return new Promise(function(resolve,reject){
                 querypg(`SELECT * FROM groups WHERE name='${name}'`).then(function(res){
-                    console.log(res);
+                    // console.log(res);
                     if(res.rowCount==0){
                         reject("group was not found")
                     }else{
@@ -96,7 +98,7 @@ module.exports = function(settings){
         findLocation:function(name){
             return new Promise(function(resolve,reject){
                 querypg(`SELECT * FROM locations WHERE name='${name}'`).then(function(res){
-                    console.log(res);
+                    // console.log(res);
                     if(res.rowCount==0){
                         reject("location was not found")
                     }else{
@@ -114,7 +116,7 @@ module.exports = function(settings){
         findEvent:function(name){
             return new Promise(function(resolve,reject){
                 querypg(`SELECT * FROM events WHERE name='${name}'`).then(function(res){
-                    console.log(res);
+                    // console.log(res);
                     if(res.rowCount==0){
                         reject("event was not found")
                     }else{
@@ -132,7 +134,7 @@ module.exports = function(settings){
         findUsersGroupsByUser:function(id){
             return new Promise(function(resolve,reject){
                 querypg(`SELECT * FROM "users-groups" RIGHT JOIN groups ON "users-groups".id_group = groups.id  WHERE "users-groups".id_user='${id}'`).then(function(res){
-                    console.log(res);
+                    // console.log(res);
                     if(res.rowCount==0){
                         reject("UsersGroups was not found")
                     }else{
@@ -144,7 +146,7 @@ module.exports = function(settings){
         findUsersGroupsByGroups:function(id){
             return new Promise(function(resolve,reject){
                 querypg(`SELECT * FROM "users-groups" RIGHT JOIN users ON "users-groups".id_user = users.id  WHERE "users-groups".id_group='${id}'`).then(function(res){
-                    console.log(res);
+                    // console.log(res);
                     if(res.rowCount==0){
                         reject("UsersGroups was not found")
                     }else{
@@ -162,7 +164,7 @@ module.exports = function(settings){
         findUsersEventsByUser:function(id){
             return new Promise(function(resolve,reject){
                 querypg(`SELECT * FROM "users-events" RIGHT JOIN events ON "users-events".id_group = events.id  WHERE "users-events".id_user='${id}'`).then(function(res){
-                    console.log(res);
+                    // console.log(res);
                     if(res.rowCount==0){
                         reject("Userseventswas not found")
                     }else{
@@ -174,7 +176,7 @@ module.exports = function(settings){
         findUsersEventsByEvent:function(id){
             return new Promise(function(resolve,reject){
                 querypg(`SELECT * FROM "users-events" RIGHT JOIN users ON "users-events".id_user = users.id  WHERE "users-events".id_group='${id}'`).then(function(res){
-                    console.log(res);
+                    // console.log(res);
                     if(res.rowCount==0){
                         reject("Usersevents was not found")
                     }else{
