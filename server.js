@@ -126,10 +126,146 @@ app.post('/authenticate/registration', function (req, res) {
     })
 });
 
-
-apiRoutes.get("/panel-glowny", function (req, res) {
-    res.sendFile(path.join(__dirname + '/../static/pages/home.html'));
+apiRoutes.post("/group/add", function (req, res) {
+    console.log('/group/add')
+    database.insertGroup(req.body).then(function(value){
+        res.json({
+            success: true,
+            message: 'Add succeed'
+        });
+        
+    }).catch(function(err){
+        res.json({
+            success: false,
+            message: err
+        });
+    })
 })
+apiRoutes.post("/group/findAll", function (req, res) {
+    console.log('/group/findAll')
+    database.selectGroups().then(function(value){
+        res.json({
+            success: true,
+            data: value
+        });
+        
+    }).catch(function(err){
+        res.json({
+            success: false,
+            message: err
+        });
+    })
+})
+apiRoutes.post("/group/find/name", function (req, res) {
+    console.log('/group/find/name')
+    database.findGroup(req.body).then(function(value){
+        res.json({
+            success: true,
+            data: value
+        });
+        
+    }).catch(function(err){
+        res.json({
+            success: false,
+            message: err
+        });
+    })
+})
+apiRoutes.post("/event/add", function (req, res) {
+    console.log('/event/add')
+    database.insertEvent(req.body).then(function(value){
+        res.json({
+            success: true,
+            message: 'Add succeed'
+        });
+        
+    }).catch(function(err){
+        res.json({
+            success: false,
+            message: err
+        });
+    })
+})
+apiRoutes.post("/event/findAll", function (req, res) {
+    console.log('/event/findAll')
+    database.selectEvents().then(function(value){
+        res.json({
+            success: true,
+            data: value
+        });
+        
+    }).catch(function(err){
+        res.json({
+            success: false,
+            message: err
+        });
+    })
+})
+apiRoutes.post("/event/find/name", function (req, res) {
+    console.log('/event/find/name')
+    database.findEvent(req.body).then(function(value){
+        res.json({
+            success: true,
+            data: value
+        });
+        
+    }).catch(function(err){
+        res.json({
+            success: false,
+            message: err
+        });
+    })
+})
+apiRoutes.post("/location/add", function (req, res) {
+    console.log('/location/add')
+    database.insertLocation(req.body).then(function(value){
+        res.json({
+            success: true,
+            message: 'Add succeed'
+        });
+        
+    }).catch(function(err){
+        res.json({
+            success: false,
+            message: err
+        });
+    })
+})
+apiRoutes.post("/location/findAll", function (req, res) {
+    console.log('/location/findAll')
+    database.selectLocations().then(function(value){
+        res.json({
+            success: true,
+            data: value
+        });
+        
+    }).catch(function(err){
+        res.json({
+            success: false,
+            message: err
+        });
+    })
+})
+apiRoutes.post("/location/find/name", function (req, res) {
+    console.log('/location/find/name')
+    database.findLocation(req.body).then(function(value){
+        res.json({
+            success: true,
+            data: value
+        });
+        
+    }).catch(function(err){
+        res.json({
+            success: false,
+            message: err
+        });
+    })
+})
+
+
+// apiRoutes.get("/panel-glowny", function (req, res) {
+//     res.sendFile(path.join(__dirname + '/../static/pages/home.html'));
+// })
 
 
 app.use('/', apiRoutes);
