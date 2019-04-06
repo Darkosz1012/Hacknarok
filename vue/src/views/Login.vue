@@ -1,11 +1,11 @@
 <template>
-<main class="loginPanel">
+<main class="loginPanel z-depth-2">
         
         <div class="loginPanel__image">
             <img src="@/assets/background.jpg" alt="tlo"/>
         </div>
         <div class="row">
-            <div class="col m8 offset-m4 s10 offset-s2 loginPanel__header">
+            <div class="col m8 offset-m4 s10 offset-s1 loginPanel__header">
                 <h1 class="deep-orange-text" >
                     Logowanie do <span class="deep-orange-text text-darken-2">VORTEX</span>
                 </h1>
@@ -15,22 +15,25 @@
             </div>
         </div>
         <div class="row">
-            <form class="col s8 offset-s4">
+            <form class="col m8 offset-m4 s10 offset-s1">
                 <div class="row">
-                    <div class="input-field col s8 offset-s2">
+                    <div class="input-field col m8 offset-m2 s10 offset-s1">
                         <input id="email" type="email" class="validate" v-model="user.name" >
                         <label for="email">Email</label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s8 offset-s2">
+                    <div class="input-field col m8 offset-m2 s10 offset-s1">
                         <input id="password" type="password" class="validate" v-model="user.pass">
                         <label for="password">Password</label>
                     </div>
                 </div>
                 <div class="row">
-                        <div class="col s4 offset-s7">
-                            <a class="waves-effect waves-light btn-small indigo darken-2" @click="submit" >Zaloguj</a>
+                        <div class="col m3 offset-m2 s6 offset-s1">
+                            <a class="waves-effect btn-flat">Register</a>
+                        </div>
+                        <div class="col m3 offset-m2 s6 offset-s1">
+                             <a class="waves-effect waves-light btn-small deep-orange darken-2" @click="submit" >Zaloguj</a>
                         </div>
                 </div>
             </form>
