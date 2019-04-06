@@ -6,7 +6,7 @@
 /*html{
     font-size: 62.5%;
 }*/
-#nav, body {
+#nav {
   width: 100%;
   background: #F2F2F2;
   overflow-x: hidden;
@@ -97,4 +97,4 @@ body {
     display: none;
   }
 }
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=login.css.map */
