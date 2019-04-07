@@ -1,24 +1,24 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import {LMap, LTileLayer, LMarker } from 'vue2-leaflet'
+
+import Mapa from './components/Map'
 
 import LoginForm from './views/LoginForm'
 import M from 'materialize-css/dist/js/materialize.js'
+import L from 'leaflet/dist/leaflet.js'
 
 import { Icon } from 'leaflet'
 //STYLE
-import 'leaflet/dist/leaflet.css'
+
 // import 'materialize-css/sass/materialize.scss'
 //SCRIPTS
 import ls from 'local-storage';
 
 Vue.config.productionTip = false
 
-Vue.component('l-map', LMap);
-Vue.component('l-tile-layer', LTileLayer);
-Vue.component('l-marker', LMarker);
 Vue.component('LoginForm', LoginForm);
+Vue.component('Mapa', Mapa);
 
 delete Icon.Default.prototype._getIconUrl;
 
@@ -33,6 +33,7 @@ Vue.mixin({
     return {
       httpReq:function httpReq(link,data,res)
       {
+        console.log(link)
           var xhr = new XMLHttpRequest();
           var url = "http://localhost:3000"+link;
           xhr.open("POST", url, true);
