@@ -176,7 +176,7 @@ apiRoutes.post("/group/findAll", function (req, res) {
 })
 apiRoutes.post("/group/find/name", function (req, res) {
     console.log('/group/find/name')
-    database.findGroup(req.body).then(function(value){
+    database.findGroup(req.body.name).then(function(value){
         res.json({
             success: true,
             data: value
@@ -221,7 +221,7 @@ apiRoutes.post("/event/findAll", function (req, res) {
 })
 apiRoutes.post("/event/find/name", function (req, res) {
     console.log('/event/find/name')
-    database.findEvent(req.body).then(function(value){
+    database.findEvent(req.body.name).then(function(value){
         res.json({
             success: true,
             data: value
@@ -266,7 +266,7 @@ apiRoutes.post("/location/findAll", function (req, res) {
 })
 apiRoutes.post("/location/find/name", function (req, res) {
     console.log('/location/find/name')
-    database.findLocation(req.body).then(function(value){
+    database.findLocation(req.body.name).then(function(value){
         res.json({
             success: true,
             data: value
@@ -280,12 +280,12 @@ apiRoutes.post("/location/find/name", function (req, res) {
     })
 })
 
-apiRoutes.post("/usersgroups/find", function (req, res) {
-    console.log('/usersgroups/find')
+apiRoutes.post("/usersgroups/find/user", function (req, res) {
+    console.log('/usersgroups/find/user')
     database.findUsersGroupsByUser(req.body.id).then(function(value){
         res.json({
             success: true,
-            data: value
+            data: value.rows
         });
         
     }).catch(function(err){

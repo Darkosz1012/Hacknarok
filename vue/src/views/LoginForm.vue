@@ -73,11 +73,12 @@
                
                this.httpReq("/authenticate/json",{"username": this.user.name, "password": this.user.pass},(data)=>{
                     console.log(data)
-                    this.ls("id",data.id);
-                    this.ls("username",data.username);
+                    this.ls("id",data.data.id);
+                    this.ls("username",data.data.username);
                     this.ls("token",data.token);
                     if(data.success)
                     {
+                        console.log("home")
                         this.router.push('home');
                     }
 

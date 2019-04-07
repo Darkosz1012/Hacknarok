@@ -52,12 +52,26 @@
             align-content: flex-start;
             padding: 1rem;
             flex-wrap: wrap;
-            .card{
-                width: calc(50% - 1rem);
-                padding: 0.5rem;
-                height: 34%;
-                line-height: 1.2rem;
-            }
+            // .card{
+            //     width: calc(50% - 1rem);
+            //     padding: 0.5rem;
+            //     height: 34%;
+            //     line-height: 1.2rem;
+            // }
         }
+    }
+}
+.card{
+    width: calc(50% - 1rem);
+    padding: 0.7rem;
+    //height: 20%;
+    line-height: 1.2rem;
+    background: white;
+    margin-bottom: 20px;
+    &>*{
+        margin-bottom: 3px;
+    }
+    h6{
+        font-weight: bold;
     }
 }
