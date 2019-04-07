@@ -113,10 +113,27 @@ app.post('/authenticate/json', function (req, res) {
 app.post('/authenticate/registration', function (req, res) {
     console.log('/authenticate/registration')
     database.insertUsers(req.body).then(function(value){
-        res.json({
-            success: true,
-            message: 'Registration succeed'
-        });
+        database.findUser(req.body.username).then(function(value){
+            console.log(value)
+            const payload = {
+                username: value.rows[0].username
+            };
+            var token = jwt.sign(payload, 'superSecret', {
+                expiresIn: '60m'
+            });
+            res.json({
+                success: true,
+                message: 'Registration succeed',
+                data:value.rows[0],
+                token: token
+            });
+        }).catch(function(err){
+            res.json({
+                success: false,
+                message: 'Authentication failed. User not found.'
+            });
+        })
+        
         
     }).catch(function(err){
         res.json({
