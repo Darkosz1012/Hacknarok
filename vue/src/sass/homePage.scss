@@ -25,6 +25,39 @@
             position: absolute;
             left: 110%;
             top: 0;
+            overflow: inherit;
+        }
+        a{
+            overflow: inherit;
+        }
+        &__overlay{
+            background: rgba(0,0,0,0.5);
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            z-index: 997;
+            top: 0;
+            left: 0;
+        }
+        &__items{
+            width: 250%;
+            height: calc(100vh - 2.5rem);
+            position: absolute;
+            right: 100%;
+            top: 0.5rem;
+            z-index: 100;
+            border-radius: 0.4rem 0 0 0.4rem;
+            display: flex;
+            justify-content: space-between; 
+            align-content: flex-start;
+            padding: 1rem;
+            flex-wrap: wrap;
+            .card{
+                width: calc(50% - 1rem);
+                padding: 0.5rem;
+                height: 34%;
+                line-height: 1.2rem;
+            }
         }
     }
 }
