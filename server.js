@@ -285,7 +285,7 @@ apiRoutes.post("/usersgroups/find/user", function (req, res) {
     database.findUsersGroupsByUser(req.body.id).then(function(value){
         res.json({
             success: true,
-            data: value
+            data: value.rows
         });
         
     }).catch(function(err){

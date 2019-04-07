@@ -33,6 +33,7 @@ Vue.mixin({
     return {
       httpReq:function httpReq(link,data,res)
       {
+        console.log(link)
           var xhr = new XMLHttpRequest();
           var url = "http://localhost:3000"+link;
           xhr.open("POST", url, true);

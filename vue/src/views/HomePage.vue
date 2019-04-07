@@ -20,19 +20,9 @@
       <li>
         <a class="subheader">Grupy</a>
       </li>
-      <li class="active">
+      <li v-for="item in groups" >
         <a href="#" class="waves-effect">
-            <span class="nav-text">Koło Naukowe</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="waves-effect">
-          <span class="nav-text">Kumple</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="waves-effect">
-          <span class="nav-text">Grupa Biznesowa</span>
+            <span class="nav-text">{{item.name}}</span>
         </a>
       </li>
     </ul>
@@ -50,11 +40,25 @@
 export default {
   name: "homePage",
   data() {
-    return {};
+    return {
+      groups:[
+
+      ]
+    };
   },
-  methods: {},
+  methods: {
+    getData:function(){
+      console.log("getData")
+      this.httpReqToken("/usersgroups/find/user",{id:this.ls("id")},(data)=>{
+        console.log(data)
+        if(data.success)
+          this.groups = data.data
+      })
+    }
+  },
   mounted() {
     M.AutoInit();
+    this.getData()
   }
 };
 </script>
