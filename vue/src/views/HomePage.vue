@@ -99,6 +99,14 @@
                     <span class="nav-text">Wydarzenia</span>
                 </a>
             </li>
+            <li>
+                <a href="#" class=""  @click="logOut">
+                    <i class="material-icons">exit_to_app</i>
+                    <span class="nav-text">Wyloguj</span>
+                   
+                </a>
+                
+            </li>
         </ul>
     </div>
   </main>
@@ -169,6 +177,14 @@ export default {
               "lng":"",
               "description":"Pub przy ulicy czarnowiejskiej",
               "people":0
+          },
+           {
+              "id":4,
+              "name":"Park technologiczny",
+              "lat": "",
+              "lng":"",
+              "description":"Czerwone maki",
+              "people":4
           }
       ],
       people:[
@@ -224,8 +240,14 @@ export default {
                 console.log(data)
                 if(data.success)
                 this.groups = data.data
-            })
-    }
+            })          
+            },
+            logOut:function(){
+                this.ls("token","");
+                this.ls("id","");
+                this.ls("username","");
+                this.router.push('/');
+            }
   },
   mounted() {
     M.AutoInit();
