@@ -39,6 +39,29 @@
     <a href="#" data-target="slide-out" class="sidenav-trigger aplication__sideNavButton">
       <i class="material-icons">menu</i>
     </a>
+    <div class="row aplication__categoriesSideNav">
+        <ul class="sidenav">
+            <li>
+                <div class="divider">
+
+                </div>
+            <li>
+                <a href="#" class="waves-effect">
+                    <span class="nav-text">Koło Naukowe</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="waves-effect">
+                <span class="nav-text">Kumple</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="waves-effect">
+                <span class="nav-text">Grupa Biznesowa</span>
+                </a>
+            </li>
+        </ul>
+    </div>
   </main>
 </template>
 

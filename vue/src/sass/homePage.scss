@@ -1,10 +1,30 @@
 .aplication{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
     &__sideNavButton{
         padding: 0.2rem;
         position: fixed;
         top: 2rem;
         left: 2rem;
         font-size: 2rem;
-        
+
+    }
+    &__categoriesSideNav{
+        position: absolute;
+        height: 100vh;
+        right: 0;
+        top: 0;
+        width: 15rem;
+        display: block;
+        color: white;
+        padding: 0;
+        margin: 0;
+        .sidenav{
+            width: 100%;
+            position: absolute;
+            left: 110%;
+            top: 0;
+        }
     }
 }
