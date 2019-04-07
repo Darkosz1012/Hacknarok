@@ -39,6 +39,7 @@
     <a href="#" data-target="slide-out" class="sidenav-trigger aplication__sideNavButton">
       <i class="material-icons">menu</i>
     </a>
+    <Mapa></Mapa>
     <div class="row aplication__categoriesSideNav">
         <div class="row aplication__categoriesSideNav__overlay" v-if="cat1 || cat2 || cat3"></div>
         <ul class="sidenav">
